@@ -1,0 +1,93 @@
+{% extends 'labels/main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <form method='POST' action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-group m-3">
+                        <label>Sender Name</label>
+                        <input required name="name" type="text" placeholder="Sender's full name"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label>Sender Address</label>
+                        <input required name="street1" type="text" placeholder="Street address or P.O. Box"
+                            class="form-control">
+                        <input required name="street2" type="text" placeholder="Apt, suite, building, floor, etc."
+                            class="form-control">
+                        <input required name="city" type="text" placeholder="City"
+                            class="form-control">
+                        <input required name="state" type="text" placeholder="State"
+                            class="form-control">
+                        <input required name="zip" type="number" placeholder="ZIP Code"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label>Phone Number</label>
+                        <input required name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="e.g. 123-456-7890"
+                            class="form-control">
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                    {% csrf_token %}
+
+                    <div class="form-group m-3">
+                        <label>Recipient Name</label>
+                        <input required name="to_name" type="text" placeholder="Recipient's full name"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label>Recipient Address</label>
+                        <input required name="to_street1" type="text" placeholder="Street address or P.O. Box"
+                            class="form-control">
+                        <input required name="to_street2" type="text" placeholder="Apt, suite, building, floor, etc."
+                            class="form-control">
+                        <input required name="to_city" type="text" placeholder="City"
+                            class="form-control">
+                        <input required name="to_state" type="text" placeholder="State"
+                            class="form-control">
+                        <input required name="to_zip" type="number" placeholder="ZIP Code"
+                            class="form-control">
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                    {% csrf_token %}
+
+                    <div class="form-group m-3">
+                        <label>Package Weight</label>
+                        <input required name="weight" type="number" step="any" placeholder="Weight in lbs"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label>Package Dimensions</label>
+                        <input required name="length" type="number" step="any" placeholder="Length in inches"
+                            class="form-control">
+                        <input required name="width" type="number" step="any" placeholder="Width in inches"
+                            class="form-control">
+                        <input required name="height" type="number" step="any" placeholder="Height in inches"
+                            class="form-control">
+                    </div>
+
+                    <button type='submit' class="btn btn-primary m-3">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

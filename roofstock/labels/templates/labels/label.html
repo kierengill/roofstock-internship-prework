@@ -1,0 +1,18 @@
+{% extends 'labels/main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card" style="padding:20px">
+               <a href="{% url 'home' %}" class="btn btn-dark my-3">Go Back</a>
+               <a href="{{ postage }}" download><img src="{{ postage }}" style="max-width:100%;
+                max-height:100%;" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
